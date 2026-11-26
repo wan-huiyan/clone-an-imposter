@@ -1,0 +1,8 @@
+{
+  "name": "clone-an-imposter",
+  "version": "0.3.0",
+  "description": "Build a private, evidence-based AI stand-in for one colleague in Claude Code",
+  "type": "module",
+  "scripts": { "test": "node --test tests/*.test.mjs" },
+  "license": "MIT"
+}

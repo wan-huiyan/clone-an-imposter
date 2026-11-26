@@ -1,0 +1,12 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wan-huiyan-clone-an-imposter",
+  "description": "Build a private, evidence-based AI stand-in for one colleague, callable as /imposter-<name>",
+  "owner": { "name": "Huiyan Wan" },
+  "plugins": [{
+    "name": "clone-an-imposter",
+    "source": "./plugins/clone-an-imposter",
+    "description": "Build a private AI stand-in for a colleague from your chats with them and shared work logs: routes questions, checks live state, drafts asks",
+    "version": "0.3.0"
+  }]
+}

@@ -1,0 +1,26 @@
+name: Release
+
+# Cuts v<VERSION> when VERSION changes on main. Re-running for an existing tag is a no-op.
+on:
+  push:
+    branches: [main]
+    paths: [VERSION]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create release if missing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v="v$(tr -d '[:space:]' < VERSION)"
+          if gh release view "$v" >/dev/null 2>&1; then
+            echo "$v already released"
+          else
+            gh release create "$v" --title "$v" --notes "See README version history."
+          fi
